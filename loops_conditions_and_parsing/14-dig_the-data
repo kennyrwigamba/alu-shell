@@ -2,5 +2,5 @@
 # This script parses apache-access.log, groups by IP and HTTP status code, and displays occurrence counts
 
 awk '{print $1, $9}' apache-access.log | \
-awk '{count[$1" "$2]++} END {for (key in count) printf "%6d %s\n", count[key], key}' | \
+awk '{count[$1" "$2]++} END {for (key in count) printf "%5d %s\n", count[key], key}' | \
 sort -nr
